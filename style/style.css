@@ -339,4 +339,41 @@ h1, h2, h3, h4, h5, h6 {
     margin: 26px 0;
   }
 }
+
+.main .costs .changes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.main .costs .changes .apply {
+  background-color: white;
+  border: 2px solid white;
+  color: #6b9cf2;
+  font: 600 20px/24px 'Roboto';
+  margin-bottom: 10px;
+  display: block;
+  border-radius: 6px;
+  padding: 3px 12px;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+}
+
+.main .costs .changes .apply:hover {
+  background-color: #6b9cf2;
+  color: white;
+  border-color: #6b9cf2;
+}
+
+.main .costs .total-costs {
+  margin-top: 20px;
+}
+
+.main .costs .total-costs h3 {
+  font: 400 30px/36px 'Roboto';
+}
 /*# sourceMappingURL=style.css.map */

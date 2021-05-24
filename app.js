@@ -7,6 +7,8 @@ $(function(){
   const food = [JSON.parse(localStorage.getItem('food'))];
   const invoices = [JSON.parse(localStorage.getItem('invoices'))];
   const subscriptions = [JSON.parse(localStorage.getItem('subscriptions'))];
+  
+  let totalCosts= []
 
 
 
@@ -70,7 +72,7 @@ $(function(){
     var value = this.value.toUpperCase();
     $('.value').text(value)
     accomodation.push(value)
-    console.log(`${this.dataset.type}`)
+    // console.log(`${this.dataset.type}`)
     localStorage.setItem(`${this.dataset.type}`, JSON.stringify(value))
   })
 
@@ -79,7 +81,7 @@ $(function(){
     var value = this.value.toUpperCase();
     $('.value').text(value)
     food.push(value)
-    console.log(`${this.dataset.type}`)
+    // console.log(`${this.dataset.type}`)
     localStorage.setItem(`${this.dataset.type}`, JSON.stringify(value))
   })
 
@@ -88,7 +90,7 @@ $(function(){
     var value = this.value.toUpperCase();
     $('.value').text(value)
     invoices.push(value)
-    console.log(`${this.dataset.type}`)
+    // console.log(`${this.dataset.type}`)
     localStorage.setItem(`${this.dataset.type}`, JSON.stringify(value))
   })
 
@@ -97,7 +99,7 @@ $(function(){
     var value = this.value.toUpperCase();
     $('.value').text(value)
     subscriptions.push(value)
-    console.log(`${this.dataset.type}`)
+    // console.log(`${this.dataset.type}`)
     localStorage.setItem(`${this.dataset.type}`, JSON.stringify(value))
   })
 
@@ -106,6 +108,15 @@ $(function(){
   $('*[data-type="invoices"]').val(invoices)
   $('*[data-type="subscriptions"]').val(subscriptions)
 
+  
+  $('.costs-list input[type=number]').each(function(){
+    totalCosts.push(parseInt($(this).val()))
+  })
+
+  totalCosts = totalCosts.reduce((total, current) => total + current, 0);
+
+  $('.total').html(totalCosts)
+  $('.chosen-currency').html(currency)
 })
 
 

@@ -249,5 +249,32 @@ h1,h2,h3,h4,h5,h6{
         }
       }
     }
+    .changes{
+      display: flex;
+      justify-content: flex-end;
+      .apply{
+        background-color: white;
+        border: 2px solid white;
+        color: $primary-color;
+        font: 600 20px/24px 'Roboto';
+        margin-bottom: 10px;
+        display: block;
+        border-radius: 6px;
+        padding: 3px 12px;
+        transition: all 0.25s ease-in-out;
+        cursor: pointer;
+        &:hover{
+          background-color: $primary-color;
+          color: white;
+          border-color: $primary-color;
+        }
+      }
+    }
+    .total-costs{
+      margin-top: 20px;
+      h3{
+        font: 400 30px/36px 'Roboto';
+      }
+    }
   }
 }
