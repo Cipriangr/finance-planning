@@ -11,7 +11,6 @@ $(function(){
   let totalCosts= []
 
 
-
   $("#year").on('input', inputEvt=>{
     //get the text that user introduced and transform to string
     const item= JSON.stringify(inputEvt.currentTarget.innerText)
@@ -26,8 +25,38 @@ $(function(){
     month.push(item)
     localStorage.setItem("month", item)
   })
+  
+  // $('#year').keyup(function(){
+  //   $(this).removeClass('visible')
+  // })
+  // $('#month').keyup(function(){
+  //   $(this).removeClass('visible')
+  // })
+
   $("#year").html(year)
   $("#month").html(month)
+
+
+  $('#year').keyup(function(e){
+    var textValue = $(this).text();
+    if(textValue.length >0){
+      $(this).removeClass('visible')
+    }
+  })
+
+  $('#month').keyup(function(e){
+    var textValue = $(this).text();
+    if(textValue.length >0){
+      $(this).removeClass('visible')
+    }
+  })
+
+  $('.set').each(function(){
+    if ($(this).text().trim().length) {
+      $(this).removeClass("visible");
+    }
+  })
+
 
 
   //get input value form currency
@@ -117,6 +146,7 @@ $(function(){
 
   $('.total').html(totalCosts)
   $('.chosen-currency').html(currency)
+
 })
 
 

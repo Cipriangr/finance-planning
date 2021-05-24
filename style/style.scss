@@ -145,6 +145,22 @@ h1,h2,h3,h4,h5,h6{
           font: 600 40px/56px 'Roboto';
         }
       }
+      #year{
+        &.visible{
+          &:before{
+            content: 'Year';
+            opacity: 0.2;
+          }
+        }
+      }
+      #month{
+        &.visible{
+          &:before{
+            content: 'Month';
+            opacity: 0.2;
+          }
+        }
+      }
     }
   }
   .options{

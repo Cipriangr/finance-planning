@@ -204,6 +204,16 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.main .header .date #year.visible:before {
+  content: 'Year';
+  opacity: 0.2;
+}
+
+.main .header .date #month.visible:before {
+  content: 'Month';
+  opacity: 0.2;
+}
+
 .main .options {
   margin-bottom: 30px;
   display: -webkit-box;
