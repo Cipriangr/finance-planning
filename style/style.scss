@@ -1,0 +1,253 @@
+@import './modules/colors';
+@import './modules/breakpoints';
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+html, body{
+  background-color: $secondary-color;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  width: 100%;
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}
+html{
+  &:before{
+    border-left: 10px solid $lighter-color;
+    position: absolute;
+    height: 100%;
+    left: 0;
+    z-index: 2;
+    content: '';
+    box-sizing: border-box;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,h6{
+  margin: 10px 0;
+  @include breakpoint(medium) {
+    margin: 15px 0;
+  }
+}
+
+.container {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  padding-left: 30px;
+  &.small {
+    max-width: 500px;
+  }
+}
+
+.space{
+  height: 50px;
+  @include breakpoint(medium) {
+    height: 150px;
+  }
+}
+
+.main{
+  margin-top: 50px;
+  margin-bottom: 50px;
+  @include breakpoint(medium) {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  .header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include breakpoint(medium) {
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: row;
+      div{
+        padding: 0 5px;
+      }
+    }
+    .title{
+      h1{
+        font: 900 50px/56px 'Roboto';
+        letter-spacing: 3px;
+        text-align: center;
+        @include breakpoint(medium) {
+          font: 900 70px/76px 'Roboto';
+          text-align: initial;
+          max-width: 320px;
+          letter-spacing: 6px;
+        }
+      }
+    }
+    .about{
+      display: flex;
+      flex-direction: column;
+      .fa-question{
+        position: relative;
+        font-size: 16px;
+        text-align: center;
+        color: yellow;
+        cursor: pointer;
+        display: flex;
+        transition: all 0.25s ease-in-out;
+        flex-direction: column;
+        &:hover{
+          color: $lighter-color;
+        }
+        &::before{
+          font-size: 50px;
+          float: right;
+        }
+      }
+      .project-info{
+        display: none;
+        margin: 10px 0;
+        z-index: 5;
+        width: fit-content;
+        background-color: rgba(216, 214, 75, 0.2);
+        padding: 1px 10px;
+        border: 1px solid yellow;
+        border-radius: 10px;
+        .close{
+          float: right;
+          border: none;
+          color: white;
+          background-color: transparent;
+          font-size: 18px;
+          cursor: pointer;
+        }
+        ul{
+          padding: 0;
+          padding-top: 7px;
+          li{
+            list-style-position: inside;
+            span{
+              color: yellow;
+              font-size: 24px;
+            }
+          }
+        }
+      }
+    }
+    .date{
+      width: 250px;
+      h4{
+        outline: none;
+        text-align: center;
+        font: 600 30px/36px 'Roboto';
+        border-bottom: 3px solid $special-color;
+        @include breakpoint(medium) {
+          font: 600 40px/56px 'Roboto';
+        }
+      }
+    }
+  }
+  .options{
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    label{
+      font: 600 24px/30px 'Roboto';
+      text-align: center;
+      input{
+        background: transparent;
+        color: white;
+        border: none;
+        font: 600 24px/30px 'Roboto';
+        border-bottom: 2px solid $special-color;
+        text-align: center;
+        outline: none;
+        margin-left: 5px;
+        max-width: 200px;
+        &.budget{
+          margin-bottom: 15px;
+          position: relative;
+          @include breakpoint(medium) {
+            margin-left: 22px;
+          }
+          // &::after{
+          //   content: "BUDGET";
+          //   position: absolute;
+          //   right: 50px;
+          //   color: red;
+          //   font-size: 100px;
+          //   z-index: 9;
+          // }
+        }
+        &.currency{
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+  .costs{
+    ol{
+      border: 4px solid $lighter-color;
+      border-radius: 6px;
+      padding: 0;
+      li{
+        border-bottom: 4px solid $special-color;
+        position: relative;
+        // list-style-position: inside;
+        padding: 5px 15px;
+        margin-bottom: 8px;
+        font: 400 26px/32px 'Roboto';
+        letter-spacing: 1.2px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        @include breakpoint(medium) {
+          flex-direction: row;
+          justify-content: space-between;
+          text-align: initial;
+          padding: 10px 30px;
+          margin-bottom: 15px;
+        }
+        &:last-child{
+          border-bottom: none;
+          margin-bottom: 10px;
+        }
+        &:first-child{
+          padding-top: 23px;
+        }
+        .info{
+          display: flex;
+          align-items: center;
+          width: 100%;
+          @include breakpoint(medium) {
+            justify-content: flex-end;
+            width:fit-content
+          }
+          .value{
+            font-weight: 600;
+            // width: 100%;
+            // max-width: 100px;
+            width: 45%;
+            background-color: transparent;
+            border: none;
+            color: white;
+            font: 400 26px/32px 'Roboto';
+            text-align: end;
+            margin: 0 8px;
+            outline: none;
+            @include breakpoint(medium) {
+              
+            }
+          }
+        }
+        .type{
+          margin: 10px 0;
+          @include breakpoint(medium) {
+            margin: 26px 0;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Finance Planning</title>
+</head>
+
+<body>
+  <div class="main container">
+    <div class="header">
+      <div class="title">
+        <h1>Finance Planning</h1>
+      </div>
+      
+      <div class="about">
+        <i class="fas fa-question">
+          (Press me)
+        </i>
+        <div class="project-info">
+          <button class="close">X</button>
+          <ul>
+            <li><span>‼️ </span>The project is in progress, more features are about to be added;</li>
+            <li>Year, Month, Budget and Currency can be edited by user;</li>
+            <li>All data are saved in localhost;</li>
+          </ul>
+        </div>
+      </div>
+      <div class="date">
+        <h4 contenteditable="true" id="year">2021</h4>
+        <h4 contenteditable="true" id="month">May</h4>
+      </div>
+    </div>
+    <div class="space"></div>
+    <div class="options">
+      <label for="">Set your budget:
+      <input class="budget" type="number" placeholder="BUDGET" value="">
+      </label>
+      <label for="">Set your currency:
+      <input class="currency" type="text" placeholder="YOUR CURRENCY" value="">
+    </label>
+    </div>
+    <div class="costs">
+      <ol class="costs-list">
+        <li>
+          <p class="type">Accomodation</p>
+          <div class="info">
+            <input class="value" type="number" value="0" data-type="accomodation" />
+            <label for="value" class="assignCurrency"></label>
+          </div>
+        </li>
+        <li>
+          <p class="type">Food</p>
+          <div class="info">
+            <input class="value" type="number" value="0" data-type="food" />
+            <label for="value" class="assignCurrency"></label>
+          </div>
+        </li>
+        <li>
+          <p class="type">Invoices</p>
+          <div class="info">
+            <input class="value" type="number" value="0" data-type="invoices" />
+            <label for="value" class="assignCurrency"></label>
+          </div>
+        </li>
+        <li>
+          <p class="type">Subscriptions</p>
+          <div class="info">
+            <input class="value" type="number" value="0" data-type="subscriptions" />
+            <label for="value" class="assignCurrency"></label>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

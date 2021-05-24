@@ -1,0 +1,342 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+html, body {
+  background-color: #3f495a;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  width: 100%;
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}
+
+html:before {
+  border-left: 10px solid #7bddff;
+  position: absolute;
+  height: 100%;
+  left: 0;
+  z-index: 2;
+  content: '';
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 10px 0;
+}
+
+@media (min-width: 768px) {
+  h1, h2, h3, h4, h5, h6 {
+    margin: 15px 0;
+  }
+}
+
+.container {
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  padding-left: 30px;
+}
+
+.container.small {
+  max-width: 500px;
+}
+
+.space {
+  height: 50px;
+}
+
+@media (min-width: 768px) {
+  .space {
+    height: 150px;
+  }
+}
+
+.main {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+@media (min-width: 768px) {
+  .main {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+}
+
+.main .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 768px) {
+  .main .header {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .main .header div {
+    padding: 0 5px;
+  }
+}
+
+.main .header .title h1 {
+  font: 900 50px/56px 'Roboto';
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .main .header .title h1 {
+    font: 900 70px/76px 'Roboto';
+    text-align: initial;
+    max-width: 320px;
+    letter-spacing: 6px;
+  }
+}
+
+.main .header .about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main .header .about .fa-question {
+  position: relative;
+  font-size: 16px;
+  text-align: center;
+  color: yellow;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.main .header .about .fa-question:hover {
+  color: #7bddff;
+}
+
+.main .header .about .fa-question::before {
+  font-size: 50px;
+  float: right;
+}
+
+.main .header .about .project-info {
+  display: none;
+  margin: 10px 0;
+  z-index: 5;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: rgba(216, 214, 75, 0.2);
+  padding: 1px 10px;
+  border: 1px solid yellow;
+  border-radius: 10px;
+}
+
+.main .header .about .project-info .close {
+  float: right;
+  border: none;
+  color: white;
+  background-color: transparent;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.main .header .about .project-info ul {
+  padding: 0;
+  padding-top: 7px;
+}
+
+.main .header .about .project-info ul li {
+  list-style-position: inside;
+}
+
+.main .header .about .project-info ul li span {
+  color: yellow;
+  font-size: 24px;
+}
+
+.main .header .date {
+  width: 250px;
+}
+
+.main .header .date h4 {
+  outline: none;
+  text-align: center;
+  font: 600 30px/36px 'Roboto';
+  border-bottom: 3px solid #53798b;
+}
+
+@media (min-width: 768px) {
+  .main .header .date h4 {
+    font: 600 40px/56px 'Roboto';
+  }
+}
+
+.main .options {
+  margin-bottom: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .options label {
+  font: 600 24px/30px 'Roboto';
+  text-align: center;
+}
+
+.main .options label input {
+  background: transparent;
+  color: white;
+  border: none;
+  font: 600 24px/30px 'Roboto';
+  border-bottom: 2px solid #53798b;
+  text-align: center;
+  outline: none;
+  margin-left: 5px;
+  max-width: 200px;
+}
+
+.main .options label input.budget {
+  margin-bottom: 15px;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .main .options label input.budget {
+    margin-left: 22px;
+  }
+}
+
+.main .options label input.currency {
+  text-transform: uppercase;
+}
+
+.main .costs ol {
+  border: 4px solid #7bddff;
+  border-radius: 6px;
+  padding: 0;
+}
+
+.main .costs ol li {
+  border-bottom: 4px solid #53798b;
+  position: relative;
+  padding: 5px 15px;
+  margin-bottom: 8px;
+  font: 400 26px/32px 'Roboto';
+  letter-spacing: 1.2px;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .main .costs ol li {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    text-align: initial;
+    padding: 10px 30px;
+    margin-bottom: 15px;
+  }
+}
+
+.main .costs ol li:last-child {
+  border-bottom: none;
+  margin-bottom: 10px;
+}
+
+.main .costs ol li:first-child {
+  padding-top: 23px;
+}
+
+.main .costs ol li .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .main .costs ol li .info {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+}
+
+.main .costs ol li .info .value {
+  font-weight: 600;
+  width: 45%;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font: 400 26px/32px 'Roboto';
+  text-align: end;
+  margin: 0 8px;
+  outline: none;
+}
+
+.main .costs ol li .type {
+  margin: 10px 0;
+}
+
+@media (min-width: 768px) {
+  .main .costs ol li .type {
+    margin: 26px 0;
+  }
+}
+/*# sourceMappingURL=style.css.map */
