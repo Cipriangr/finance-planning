@@ -386,4 +386,9 @@ h1, h2, h3, h4, h5, h6 {
 .main .costs .total-costs h3 {
   font: 400 30px/36px 'Roboto';
 }
+
+.main .costs .total-costs h3 span {
+  color: #7bddff;
+  font-weight: 600;
+}
 /*# sourceMappingURL=style.css.map */

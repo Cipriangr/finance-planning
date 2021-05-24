@@ -57,8 +57,6 @@ $(function(){
     }
   })
 
-
-
   //get input value form currency
   $('.currency').on('input keyup', function(){
       // var x = e.currentTarget.value.toUpperCase();

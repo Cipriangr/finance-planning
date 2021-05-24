@@ -290,6 +290,10 @@ h1,h2,h3,h4,h5,h6{
       margin-top: 20px;
       h3{
         font: 400 30px/36px 'Roboto';
+        span{
+          color: $lighter-color;
+          font-weight: 600;
+        }
       }
     }
   }
