@@ -145,6 +145,12 @@ $(function(){
   $('.total').html(totalCosts)
   $('.chosen-currency').html(currency)
 
+  let budgestatus = JSON.parse(budget) - totalCosts;
+  $('.budget-status').html(budgestatus)
+
+  $('.reset-btn').on('click',()=>{
+    localStorage.clear()
+  })
 })
 
 

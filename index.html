@@ -41,7 +41,7 @@
       <input class="budget" type="number" placeholder="BUDGET" value="">
       </label>
       <label for="">Set your currency:
-      <input class="currency" type="text" placeholder="YOUR CURRENCY" value="">
+      <input class="currency" type="text" placeholder="YOUR CURRENCY" value="" maxlength="3">
     </label>
     </div>
     <div class="costs">
@@ -78,8 +78,14 @@
       <div class="changes">
         <button class="apply" onClick="window.location.reload();">Apply changes</button>
       </div>
+
       <div class="total-costs">
         <h3>Total costs: <span class="total"> </span> <span class="chosen-currency"></span></h3>
+        <h3>Budget status: <span class="budget-status"> </span> <span class="chosen-currency"></span></h3>
+      </div>
+
+      <div class="reset">
+        <button class="apply reset-btn" onClick="window.location.reload();">Reset Everything</button>
       </div>
     </div>
   </div>
