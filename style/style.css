@@ -358,7 +358,54 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.main .costs .changes, .main .costs .reset {
+.main .new-category {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 20px;
+}
+
+.main .new-category input {
+  width: 70%;
+  border: 3px solid #6b9cf2;
+  border-radius: 6px;
+  margin: 0 5px;
+  outline: none;
+  color: #6b9cf2;
+  font: 600 18px/22px 'Roboto';
+  padding: 4px 6px;
+  caret-color: #6b9cf2;
+}
+
+@media (min-width: 768px) {
+  .main .new-category input {
+    width: 300px;
+  }
+}
+
+.main .new-category button {
+  background-color: white;
+  border: 2px solid white;
+  color: #6b9cf2;
+  font: 600 18px/22px 'Roboto';
+  display: block;
+  border-radius: 6px;
+  padding: 3px 12px;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+}
+
+.main .new-category button:hover {
+  background-color: #6b9cf2;
+  color: white;
+  border-color: #6b9cf2;
+}
+
+.main .changes, .main .reset {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -367,7 +414,7 @@ h1, h2, h3, h4, h5, h6 {
           justify-content: flex-end;
 }
 
-.main .costs .changes .apply, .main .costs .reset .apply {
+.main .changes .apply, .main .reset .apply {
   background-color: white;
   border: 2px solid white;
   color: #6b9cf2;
@@ -381,21 +428,21 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
 }
 
-.main .costs .changes .apply:hover, .main .costs .reset .apply:hover {
+.main .changes .apply:hover, .main .reset .apply:hover {
   background-color: #6b9cf2;
   color: white;
   border-color: #6b9cf2;
 }
 
-.main .costs .total-costs {
+.main .total-costs {
   margin: 20px 0;
 }
 
-.main .costs .total-costs h3 {
+.main .total-costs h3 {
   font: 400 30px/36px 'Roboto';
 }
 
-.main .costs .total-costs h3 span {
+.main .total-costs h3 span {
   color: #7bddff;
   font-weight: 600;
 }

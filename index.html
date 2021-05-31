@@ -46,47 +46,31 @@
     </div>
     <div class="costs">
       <ol class="costs-list">
-        <li>
-          <p class="type">Accomodation</p>
-          <div class="info">
-            <input class="value" type="number" value="0" placeholder="0" data-type="accomodation">
-            <label for="value" class="assignCurrency"></label>
-          </div>
-        </li>
-        <li>
-          <p class="type">Food</p>
-          <div class="info">
-            <input class="value" type="number" value="0" placeholder="0" data-type="food" />
-            <label for="value" class="assignCurrency"></label>
-          </div>
-        </li>
-        <li>
-          <p class="type">Invoices</p>
-          <div class="info">
-            <input class="value" type="number" value="0" placeholder="0" data-type="invoices" />
-            <label for="value" class="assignCurrency"></label>
-          </div>
-        </li>
-        <li>
+        <!-- <li>
           <p class="type">Subscriptions</p>
           <div class="info">
             <input class="value" type="number" value="0" placeholder="0" data-type="subscriptions" />
             <label for="value" class="assignCurrency"></label>
           </div>
-        </li>
+        </li> -->
       </ol>
-      <div class="changes">
-        <button class="apply" onClick="window.location.reload();">Apply changes</button>
-      </div>
+    </div>
+    <div class="new-category">
+      <input type="text" placeholder="Add new item (min 3 characters)" class="new-item" value="">
+      <button onClick="window.location.reload()";>Add</button>
+    </div>
 
-      <div class="total-costs">
-        <h3>Total costs: <span class="total"> </span> <span class="chosen-currency"></span></h3>
-        <h3>Budget status: <span class="budget-status"> </span> <span class="chosen-currency"></span></h3>
-      </div>
+    <div class="changes">
+      <button class="apply" onClick="window.location.reload();">Apply new changes</button>
+    </div>
 
-      <div class="reset">
-        <button class="apply reset-btn" onClick="window.location.reload();">Reset Everything</button>
-      </div>
+    <div class="total-costs">
+      <h3>Total costs: <span class="total">0asdasdas</span> <span class="chosen-currency"></span></h3>
+      <h3>Budget status: <span class="budget-status"> </span> <span class="chosen-currency"></span></h3>
+    </div>
+
+    <div class="reset">
+      <button class="apply reset-btn" onClick="window.location.reload();">Reset Everything</button>
     </div>
   </div>
 

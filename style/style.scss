@@ -271,35 +271,70 @@ h1,h2,h3,h4,h5,h6{
         }
       }
     }
-    .changes, .reset{
-      display: flex;
-      justify-content: flex-end;
-      .apply{
-        background-color: white;
-        border: 2px solid white;
-        color: $primary-color;
-        font: 600 20px/24px 'Roboto';
-        margin-bottom: 10px;
-        display: block;
-        border-radius: 6px;
-        padding: 3px 12px;
-        transition: all 0.25s ease-in-out;
-        cursor: pointer;
-        &:hover{
-          background-color: $primary-color;
-          color: white;
-          border-color: $primary-color;
-        }
+  }
+  .new-category{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    input{
+      width: 70%;
+      border: 3px solid $primary-color;
+      border-radius: 6px;
+      margin: 0 5px;
+      outline: none;
+      color: $primary-color;
+      font: 600 18px/22px 'Roboto';
+      padding: 4px 6px;
+      caret-color: $primary-color;
+      @include breakpoint(medium) {
+        width: 300px;
       }
     }
-    .total-costs{
-      margin: 20px 0;
-      h3{
-        font: 400 30px/36px 'Roboto';
-        span{
-          color: $lighter-color;
-          font-weight: 600;
-        }
+    button{
+      background-color: white;
+      border: 2px solid white;
+      color: $primary-color;
+      font: 600 18px/22px 'Roboto';
+      display: block;
+      border-radius: 6px;
+      padding: 3px 12px;
+      transition: all 0.25s ease-in-out;
+      cursor: pointer;
+      &:hover{
+        background-color: $primary-color;
+        color: white;
+        border-color: $primary-color;
+      }
+    }
+  }
+  .changes, .reset{
+    display: flex;
+    justify-content: flex-end;
+    .apply{
+      background-color: white;
+      border: 2px solid white;
+      color: $primary-color;
+      font: 600 20px/24px 'Roboto';
+      margin-bottom: 10px;
+      display: block;
+      border-radius: 6px;
+      padding: 3px 12px;
+      transition: all 0.25s ease-in-out;
+      cursor: pointer;
+      &:hover{
+        background-color: $primary-color;
+        color: white;
+        border-color: $primary-color;
+      }
+    }
+  }
+  .total-costs{
+    margin: 20px 0;
+    h3{
+      font: 400 30px/36px 'Roboto';
+      span{
+        color: $lighter-color;
+        font-weight: 600;
       }
     }
   }
