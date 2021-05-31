@@ -144,8 +144,7 @@ $(function(){
 
   $('.total').html(totalCosts)
   $('.chosen-currency').html(currency)
-
-  let budgestatus = JSON.parse(budget) - totalCosts;
+  let budgestatus = budget.toString() - totalCosts;
   $('.budget-status').html(budgestatus)
 
   $('.reset-btn').on('click',()=>{
