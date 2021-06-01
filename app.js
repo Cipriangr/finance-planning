@@ -3,10 +3,6 @@ $(function () {
   const month = [JSON.parse(localStorage.getItem('month'))];
   const currency = [JSON.parse(localStorage.getItem('currency'))];
   const budget = [JSON.parse(localStorage.getItem('budget'))];
-  const accomodation = [JSON.parse(localStorage.getItem('accomodation'))];
-  const food = [JSON.parse(localStorage.getItem('food'))];
-  const invoices = [JSON.parse(localStorage.getItem('invoices'))];
-  const subscriptions = [JSON.parse(localStorage.getItem('subscriptions'))];
   const list = document.querySelector('.costs-list');
   const getNewItem = document.querySelector('.new-item');
   const activities = JSON.parse(localStorage.getItem('items')) || ['accomodation', 'food', 'invoices', 'subscriptions'];
@@ -91,53 +87,6 @@ $(function () {
     $(this.parentElement).css('display', 'none');
   })
 
-  // ------------------------------------------------------------
-  //Here i need to find a way to make only one function, not 4
-  // ------------------------------------------------------------
-
-
-  // $('.value').on('input keyup', function () {
-  //   // var x = e.currentTarget.value.toUpperCase();
-  //   var value = this.value.toUpperCase();
-  //   $('.value').text(value)
-  //   accomodation.push(value)
-  //   // console.log(`${this.dataset.type}`)
-  //   localStorage.setItem(`${this.dataset.type}`, JSON.stringify(value))
-  // })
-
-  // $('.value').on('input keyup', function () {
-  //   // var x = e.currentTarget.value.toUpperCase();
-  //   var value = this.value.toUpperCase();
-  //   $('.value').text(value)
-  //   food.push(value)
-  //   // console.log(`${this.dataset.type}`)
-  //   localStorage.setItem(`${this.dataset.type}`, JSON.stringify(value))
-  // })
-
-  // $('.value').on('input keyup', function () {
-  //   // var x = e.currentTarget.value.toUpperCase();
-  //   var value = this.value.toUpperCase();
-  //   $('.value').text(value)
-  //   invoices.push(value)
-  //   // console.log(`${this.dataset.type}`)
-  //   localStorage.setItem(`${this.dataset.type}`, JSON.stringify(value))
-  // })
-
-  // $('.value').on('input keyup', function () {
-  //   // var x = e.currentTarget.value.toUpperCase();
-  //   var value = this.value.toUpperCase();
-  //   $('.value').text(value)
-  //   subscriptions.push(value)
-  //   // console.log(`${this.dataset.type}`)
-  //   localStorage.setItem(`${this.dataset.type}`, JSON.stringify(value))
-  // })
-
-  // $('*[data-type="accomodation"]').val(accomodation)
-  // $('*[data-type="food"]').val(food)
-  // $('*[data-type="invoices"]').val(invoices)
-  // $('*[data-type="subscriptions"]').val(subscriptions)
-
-
   function newItem() {
     let valueToAdd;
     if(getNewItem.value.length > 2){
@@ -153,7 +102,7 @@ $(function () {
     itemsList.innerHTML = items.map((item, i)=>{
       return `
       <li data-set=${i}>
-        <p class="type">${item}</p>
+        <p class="type"><i class="fas fa-trash"></i>${item}</p>
         <div class="info">
           <input class="value" type="number" value="0" placeholder="0" data-type="${item}">
           <label for="value" class="assignCurrency">${currency}</label>
@@ -193,6 +142,26 @@ $(function () {
 
   $('.reset-btn').on('click', () => {
     localStorage.clear()
+  })
+
+  const trash = document.querySelectorAll('.fa-trash')
+  trash.forEach(item=>{
+    item.addEventListener('click', (e)=>{
+    e.target.parentElement.parentElement.remove()
+    const itemData = e.target.parentElement.textContent
+    let storageValues = JSON.parse(localStorage.getItem("items"))
+    //daca exista item-ul in array-ul din key-ul localstorage, il voi sterge
+    //apoi voi face update la key
+      if(storageValues.includes(itemData)){
+        // storageValues.remove(itemData)
+        console.log(storageValues.indexOf(itemData))
+        let theIndex = storageValues.indexOf(itemData)
+        storageValues.splice(theIndex, 1)
+        console.log(storageValues)
+        localStorage.setItem('items', JSON.stringify(storageValues) )
+      }
+
+    })
   })
 
 })

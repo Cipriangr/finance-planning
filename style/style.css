@@ -358,6 +358,16 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.main .costs ol li .type i {
+  margin-right: 5px;
+  padding: 2px;
+}
+
+.main .costs ol li .type i:hover {
+  color: #6b9cf2;
+  cursor: pointer;
+}
+
 .main .new-category {
   display: -webkit-box;
   display: -ms-flexbox;

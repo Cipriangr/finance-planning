@@ -268,6 +268,14 @@ h1,h2,h3,h4,h5,h6{
           @include breakpoint(medium) {
             margin: 26px 0;
           }
+          i{
+            margin-right: 5px;
+            padding: 2px;
+            &:hover{
+              color: $primary-color;
+              cursor: pointer;
+            }
+          }
         }
       }
     }
