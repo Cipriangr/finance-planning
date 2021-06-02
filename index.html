@@ -16,7 +16,6 @@
       <div class="title">
         <h1>Finance Planning</h1>
       </div>
-      
       <div class="about">
         <i class="fas fa-question">
           (Press me)
@@ -25,8 +24,11 @@
           <button class="close">X</button>
           <ul>
             <li><span>‼️ </span>The project is in progress, more features are about to be added;</li>
-            <li>Year(numbers), Month, Budget and Currency(EX: EUR, RON) can be edited by user;</li>
+            <li>Year, Month, Budget, Currency and value for every item (<span class="currency-red">EX: EUR, RON</span>) can be edited by user;</li>
+            <li>The currency you can use can be found <a target="_blank" href="https://openexchangerates.org/api/currencies.json">here;</a></li>
             <li>All data are saved in localhost;</li>
+            <li>I would appreciate any feedback you have for me;</li>
+            <li>Contact me at <a href="mailto:grumazescu_ciprian@yahoo.com">grumazescu_ciprian@yahoo.com</a> or use the contact form from my personal website: <a target="_blank" href="https:/cipriangrumazescu.com">https:/cipriangrumazescu.com</a></li>
           </ul>
         </div>
       </div>
@@ -36,25 +38,21 @@
       </div>
     </div>
     <div class="space"></div>
+    
     <div class="options">
       <label for="">Set your budget:
-        <input class="budget" type="number" placeholder="BUDGET" value="">
+        <input class="budget" type="number" pattern="[^-,]+" min="0" step="1" placeholder="BUDGET" value="">
       </label>
-      <label for="">Set your currency:
+      <label class="currency-label" for="">Set your currency:
         <input class="currency" type="text" placeholder="YOUR CURRENCY" value="" maxlength="3">
       </label>
     </div>
+
     <div class="costs">
       <ol class="costs-list">
-        <!-- <li>
-          <p class="type">Subscriptions</p>
-          <div class="info">
-            <input class="value" type="number" value="0" placeholder="0" data-type="subscriptions" />
-            <label for="value" class="assignCurrency"></label>
-          </div>
-        </li> -->
       </ol>
     </div>
+
     <div class="new-category">
       <input `="text" placeholder="Add new item (min.3 characters)" class="new-item" value="">
       <button onClick="window.location.reload()";>Add</button>

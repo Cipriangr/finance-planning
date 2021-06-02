@@ -78,6 +78,15 @@ $(function () {
   })
 
   $('.budget').val(budget)
+  //restrict characters on input
+  const budgetinput = document.querySelector('.budget')
+  budgetinput.onkeydown = function(e) {
+    if(!((e.keyCode > 95 && e.keyCode < 106)
+      || (e.keyCode > 47 && e.keyCode < 58) 
+      || e.keyCode == 8)) {
+        return false;
+    }
+}
 
   $('.fa-question').on('click', () => {
     $('.project-info').toggle('fadein')

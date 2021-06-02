@@ -164,6 +164,12 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 10px;
 }
 
+@media (min-width: 768px) {
+  .main .header .about .project-info {
+    max-width: 650px;
+  }
+}
+
 .main .header .about .project-info .close {
   float: right;
   border: none;
@@ -187,11 +193,26 @@ h1, h2, h3, h4, h5, h6 {
 
 .main .header .about .project-info ul li {
   list-style-position: inside;
+  margin-bottom: 5px;
 }
 
 .main .header .about .project-info ul li span {
   color: yellow;
   font-size: 24px;
+}
+
+.main .header .about .project-info ul li .currency-red {
+  font: 600 16px/20px 'Roboto';
+  letter-spacing: 1.2px;
+  color: #6b9cf2;
+}
+
+.main .header .about .project-info ul li a {
+  color: white;
+}
+
+.main .header .about .project-info ul li a:hover {
+  color: #6b9cf2;
 }
 
 .main .header .date {
@@ -251,6 +272,7 @@ h1, h2, h3, h4, h5, h6 {
   outline: none;
   margin-left: 5px;
   max-width: 200px;
+  text-transform: uppercase;
 }
 
 .main .options label input.budget {
@@ -262,10 +284,6 @@ h1, h2, h3, h4, h5, h6 {
   .main .options label input.budget {
     margin-left: 22px;
   }
-}
-
-.main .options label input.currency {
-  text-transform: uppercase;
 }
 
 .main .costs ol {

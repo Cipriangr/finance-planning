@@ -113,6 +113,9 @@ h1,h2,h3,h4,h5,h6{
         padding: 1px 10px;
         border: 1px solid yellow;
         border-radius: 10px;
+        @include breakpoint(medium) {
+          max-width: 650px;
+        }
         .close{
           float: right;
           border: none;
@@ -131,9 +134,21 @@ h1,h2,h3,h4,h5,h6{
           padding-top: 7px;
           li{
             list-style-position: inside;
+            margin-bottom: 5px;
             span{
               color: yellow;
               font-size: 24px;
+            }
+            .currency-red{
+              font: 600 16px/20px 'Roboto';
+              letter-spacing: 1.2px;
+              color: $primary-color;
+            }
+            a{
+              color: white;
+              &:hover{
+                color: $primary-color;
+              }
             }
           }
         }
@@ -187,6 +202,7 @@ h1,h2,h3,h4,h5,h6{
         outline: none;
         margin-left: 5px;
         max-width: 200px;
+        text-transform: uppercase;
         &.budget{
           margin-bottom: 15px;
           position: relative;
@@ -201,9 +217,6 @@ h1,h2,h3,h4,h5,h6{
           //   font-size: 100px;
           //   z-index: 9;
           // }
-        }
-        &.currency{
-          text-transform: uppercase;
         }
       }
     }
