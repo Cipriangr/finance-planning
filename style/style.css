@@ -505,6 +505,10 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
 }
 
+.main .costs ol li:nth-child(-n+4) .type i {
+  display: none;
+}
+
 .main .new-category {
   display: -webkit-box;
   display: -ms-flexbox;

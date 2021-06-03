@@ -96,10 +96,10 @@ $(function () {
     $(this.parentElement).css('display', 'none');
   })
   
-  localStorage.setItem('items', JSON.stringify(activities));
+
   function newItem() {
     let valueToAdd;
-    if(getNewItem.value.length > 2){
+    if(getNewItem.value.length > 1){
       valueToAdd = getNewItem.value.toLowerCase()
       activities.push(valueToAdd)
       populateList(activities, list)
@@ -122,7 +122,8 @@ $(function () {
     }).join("")
   }
 
-  populateList(activities, list)
+  populateList(activities, list)//update de list with items
+
   const arrayList = list.querySelectorAll('li input')
   arrayList.forEach(item=>{
     item.addEventListener('input', function(e){
@@ -133,8 +134,6 @@ $(function () {
     if(localStorage.getItem(item.dataset.type)){
       item.value = JSON.parse(localStorage.getItem(item.dataset.type))
       item.textContent = JSON.parse(localStorage.getItem(item.dataset.type))
-    }else{
-      item.value = 0
     }
     totalCosts.push(parseInt(item.value))// parse all values to array so I can calculate 
   })
@@ -157,36 +156,20 @@ $(function () {
   const trash = document.querySelectorAll('.fa-trash')
   trash.forEach(item=>{
     item.addEventListener('click', (e)=>{
-    e.target.parentElement.parentElement.remove()
     const itemData = e.target.parentElement.textContent
     let storageValues = JSON.parse(localStorage.getItem("items"))
     //daca exista item-ul in array-ul din key-ul localstorage, il voi sterge
-    //apoi voi face update la key
+    //apoi voi face update la key din localstorage
       if(storageValues.includes(itemData)){
-        // storageValues.remove(itemData)
-        // console.log(storageValues.indexOf(itemData))
         let theIndex = storageValues.indexOf(itemData)
         storageValues.splice(theIndex, 1)
-        // console.log(storageValues)
+        //apoi voi face update la key din localstorage
         localStorage.setItem('items', JSON.stringify(storageValues) )
+        e.target.parentElement.parentElement.remove()
+        //sterge item-ul (li) din array
+        activities.splice(theIndex, 1)
       }
-
     })
   })
 
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
