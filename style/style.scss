@@ -63,7 +63,13 @@ h1,h2,h3,h4,h5,h6{
     display: flex;
     flex-direction: column;
     align-items: center;
-    @include breakpoint(medium) {
+    @media (min-width: 768px) and (max-width: 1023px) {
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+    @include breakpoint(large) {
       justify-content: space-around;
       align-items: center;
       flex-direction: row;
@@ -72,6 +78,12 @@ h1,h2,h3,h4,h5,h6{
       }
     }
     .title{
+      @media (min-width: 768px) and (max-width: 1023px) {
+        flex: 0 0 50%;
+      }
+      @include breakpoint(large) {
+        max-width: 320px;
+      }
       h1{
         font: 900 50px/56px 'Roboto';
         letter-spacing: 3px;
@@ -79,7 +91,7 @@ h1,h2,h3,h4,h5,h6{
         @include breakpoint(medium) {
           font: 900 70px/76px 'Roboto';
           text-align: initial;
-          max-width: 320px;
+          // max-width: 320px;
           letter-spacing: 6px;
         }
       }
@@ -87,6 +99,16 @@ h1,h2,h3,h4,h5,h6{
     .about{
       display: flex;
       flex-direction: column;
+      margin: 20px 0;
+      @media (min-width: 768px) and (max-width: 1023px) {
+        flex: 0 0 100%;
+        order: 3;
+      }
+      @include breakpoint(large) {
+        margin: initial;
+        order: initial;
+        margin-top: initial;
+      }
       .fa-question{
         position: relative;
         font-size: 16px;
@@ -115,6 +137,7 @@ h1,h2,h3,h4,h5,h6{
         border-radius: 10px;
         @include breakpoint(medium) {
           max-width: 650px;
+          margin: 0 auto;
         }
         .close{
           float: right;
@@ -156,6 +179,12 @@ h1,h2,h3,h4,h5,h6{
     }
     .date{
       width: 250px;
+      @media (min-width: 768px) and (max-width: 1023px) {
+        flex: 0 0 50%;
+      }
+      @include breakpoint(large) {
+        width: 250px;
+      }
       h4{
         outline: none;
         text-align: center;
@@ -203,6 +232,9 @@ h1,h2,h3,h4,h5,h6{
         margin-left: 5px;
         max-width: 200px;
         text-transform: uppercase;
+        &::placeholder{
+          font: 600 18px/30px 'Roboto';
+        }
         &.budget{
           margin-bottom: 15px;
           position: relative;

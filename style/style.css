@@ -83,7 +83,23 @@ h1, h2, h3, h4, h5, h6 {
           align-items: center;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1023px) {
+  .main .header {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@media (min-width: 1024px) {
   .main .header {
     -ms-flex-pack: distribute;
         justify-content: space-around;
@@ -100,6 +116,20 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+@media (min-width: 768px) and (max-width: 1023px) {
+  .main .header .title {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main .header .title {
+    max-width: 320px;
+  }
+}
+
 .main .header .title h1 {
   font: 900 50px/56px 'Roboto';
   letter-spacing: 3px;
@@ -110,7 +140,6 @@ h1, h2, h3, h4, h5, h6 {
   .main .header .title h1 {
     font: 900 70px/76px 'Roboto';
     text-align: initial;
-    max-width: 320px;
     letter-spacing: 6px;
   }
 }
@@ -123,6 +152,28 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin: 20px 0;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .main .header .about {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main .header .about {
+    margin: initial;
+    -webkit-box-ordinal-group: initial;
+        -ms-flex-order: initial;
+            order: initial;
+    margin-top: initial;
+  }
 }
 
 .main .header .about .fa-question {
@@ -167,6 +218,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 768px) {
   .main .header .about .project-info {
     max-width: 650px;
+    margin: 0 auto;
   }
 }
 
@@ -217,6 +269,20 @@ h1, h2, h3, h4, h5, h6 {
 
 .main .header .date {
   width: 250px;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .main .header .date {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main .header .date {
+    width: 250px;
+  }
 }
 
 .main .header .date h4 {
@@ -273,6 +339,22 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 5px;
   max-width: 200px;
   text-transform: uppercase;
+}
+
+.main .options label input::-webkit-input-placeholder {
+  font: 600 18px/30px 'Roboto';
+}
+
+.main .options label input:-ms-input-placeholder {
+  font: 600 18px/30px 'Roboto';
+}
+
+.main .options label input::-ms-input-placeholder {
+  font: 600 18px/30px 'Roboto';
+}
+
+.main .options label input::placeholder {
+  font: 600 18px/30px 'Roboto';
 }
 
 .main .options label input.budget {

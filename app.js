@@ -95,7 +95,8 @@ $(function () {
   $('.close').on('click', function () {
     $(this.parentElement).css('display', 'none');
   })
-
+  
+  localStorage.setItem('items', JSON.stringify(activities));
   function newItem() {
     let valueToAdd;
     if(getNewItem.value.length > 2){
@@ -163,10 +164,10 @@ $(function () {
     //apoi voi face update la key
       if(storageValues.includes(itemData)){
         // storageValues.remove(itemData)
-        console.log(storageValues.indexOf(itemData))
+        // console.log(storageValues.indexOf(itemData))
         let theIndex = storageValues.indexOf(itemData)
         storageValues.splice(theIndex, 1)
-        console.log(storageValues)
+        // console.log(storageValues)
         localStorage.setItem('items', JSON.stringify(storageValues) )
       }
 
